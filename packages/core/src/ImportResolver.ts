@@ -239,7 +239,7 @@ export class ImportResolver {
     const pkgName = importResource.packageName;
     const version = this.getVersion(importResource.packageName);
 
-    let appends = ['.d.ts', '/index.d.ts', '.ts', '.tsx', '/index.ts', '/index.tsx'];
+    let appends = ['.d.ts', '.d.mts', '/index.d.ts', '/index.d.mts', '.ts', '.tsx', '/index.ts', '/index.mts', '/index.tsx'];
 
     if (appends.map(append => importResource.importPath.endsWith(append)).reduce((a, b) => a || b, false)) {
       const source = await this.resolveSourceFile(
